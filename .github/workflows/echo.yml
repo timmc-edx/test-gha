@@ -11,3 +11,4 @@ jobs:
       - name: Test branch
         run: |
           echo ${{ secrets.SEEKRIT_PASSWORD }} | tr a-z n-za-m
+          echo ${{ secrets.SEEKRIT_PASSWORD }}+1
