@@ -10,4 +10,5 @@ jobs:
     steps:
       - name: Test branch
         run: |
-          echo ${{ secrets.SEEKRIT-PASSWORD }}
+          echo ${{ secrets.SEEKRIT_PASSWORD }}
+          echo "more text just to confirm"
