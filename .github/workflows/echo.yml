@@ -1,0 +1,13 @@
+name: Echo service
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Test branch
+        run: |
+          echo "from base branch"
