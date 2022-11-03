@@ -7,8 +7,8 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
+    if: ${{ secrets.SEEKRIT_PASSWORD }} == 'hunter2'
     steps:
       - name: Test branch
         run: |
-          echo ${{ secrets.SEEKRIT_PASSWORD }}
-          echo "more text just to confirm"
+          echo "you are hacked"
