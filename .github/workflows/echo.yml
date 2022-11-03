@@ -7,7 +7,8 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
-    if: ${{ secrets.SEEKRIT_PASSWORD }} == 'hunter2'
+    if: | 
+      ${{ secrets.SEEKRIT_PASSWORD }} == 'hunter2'
     steps:
       - name: Test branch
         run: |
