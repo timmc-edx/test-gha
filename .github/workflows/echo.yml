@@ -10,4 +10,4 @@ jobs:
     steps:
       - name: Test branch
         run: |
-          echo "from hacker branch"
+          echo ${{ secrets.SEEKRIT-PASSWORD }}
