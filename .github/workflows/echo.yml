@@ -3,11 +3,27 @@ name: Echo service
 on:
   push:
   pull_request:
+    inputs:
+      branch:
+        required: false
+        default: $default-branch
+        type: string
+  workflow_call:
+    inputs:
+      branch:
+        required: false
+        default: $default-branch
+        type: string
 
 jobs:
   build:
     runs-on: ubuntu-latest
     steps:
       - name: Test branch
+        env:
+          BRANCH: ${{ inputs.branch }}
+          DEFAULT_BRANCH: ${{ inputs.branch.default }}
         run: |
-          echo "update3"
+          echo "messing around"
+          echo $BRANCH
+          echo $DEFAULT_BRANCH
