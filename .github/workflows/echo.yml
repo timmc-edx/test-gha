@@ -9,5 +9,8 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Test branch
+        env:
+          DEFAULT_BRANCH: ${{ $default-branch }}
         run: |
-          echo "update3"
+          echo "messing around"
+          echo $DEFAULT_BRANCH
