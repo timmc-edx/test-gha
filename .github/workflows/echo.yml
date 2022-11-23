@@ -3,6 +3,12 @@ name: Echo service
 on:
   push:
   pull_request:
+  workflow_call:
+    inputs:
+      branch:
+        required: false
+        default: $default-branch
+        type: string
 
 jobs:
   build:
@@ -10,7 +16,7 @@ jobs:
     steps:
       - name: Test branch
         env:
-          DEFAULT_BRANCH: ${{ github.event.inputs.branch || $default-branch }}
+          DEFAULT_BRANCH: ${{ inputs.branch }}
         run: |
           echo "messing around"
           echo $DEFAULT_BRANCH
