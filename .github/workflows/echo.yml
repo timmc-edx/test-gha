@@ -3,6 +3,11 @@ name: Echo service
 on:
   push:
   pull_request:
+    inputs:
+      branch:
+        required: false
+        default: $default-branch
+        type: string
   workflow_call:
     inputs:
       branch:
