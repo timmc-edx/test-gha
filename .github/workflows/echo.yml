@@ -10,7 +10,7 @@ jobs:
     steps:
       - name: Test branch
         env:
-          DEFAULT_BRANCH: ${{ $default-branch }}
+          DEFAULT_BRANCH: ${{ github.event.inputs.branch || $default-branch }}
         run: |
           echo "messing around"
           echo $DEFAULT_BRANCH
