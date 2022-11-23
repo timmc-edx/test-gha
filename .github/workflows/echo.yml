@@ -16,7 +16,9 @@ jobs:
     steps:
       - name: Test branch
         env:
-          DEFAULT_BRANCH: ${{ inputs.branch }}
+          BRANCH: ${{ inputs.branch }}
+          DEFAULT_BRANCH: ${{ inputs.branch.default }}
         run: |
           echo "messing around"
+          echo $BRANCH
           echo $DEFAULT_BRANCH
